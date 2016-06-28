@@ -15,6 +15,10 @@ $(document).ready(function () {
 		chrome.tabs.executeScript({
             code: '$("input[type=text].url").val("http://misasi.com.br")'
         });
+		
+		chrome.tabs.executeScript({
+            code: '$("input[type=text].cep").val("11111-111")'
+        });
         
         chrome.tabs.executeScript({
             code: '$("input[type=tel], input[name=cel], input[type=tel], input[name=telefone]").val("(11) 1111-1111").focus()'
