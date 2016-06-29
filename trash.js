@@ -34,16 +34,16 @@ $(document).ready(function () {
         });
 
         chrome.tabs.executeScript({
-            code: '$("input[type=text].url, input[type=url]").val(location.href)'
+            code: '$("input[type=text].url, input[type=url]").val(location.href)/focus()'
         });
 
 
         chrome.tabs.executeScript({
-            code: '$("input[type=text].data").val("' + dataAtualFormatada() + '")'
+            code: '$("input[type=text].data").val("' + dataAtualFormatada() + '").focus()'
         });
 
         chrome.tabs.executeScript({
-            code: '$("input[type=text].hora").val("12:00")'
+            code: '$("input[type=text].hora").val("12:00").focus()'
         });
 
         chrome.tabs.executeScript({
@@ -51,7 +51,7 @@ $(document).ready(function () {
         });
 
         chrome.tabs.executeScript({
-            code: '$("input[type=text].cep").val("05444-000")'
+            code: '$("input[type=text].cep").val("05444-000").focus()'
         });
 
         chrome.tabs.executeScript({
@@ -74,7 +74,7 @@ $(document).ready(function () {
         });
 
         chrome.tabs.executeScript({
-            code: '$("textarea").val("Isso é uma mensagem de teste")'
+            code: '$("textarea").val("Isso é uma mensagem de teste").focus()'
         });
     }
     var hand = function (e) {
