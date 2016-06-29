@@ -3,22 +3,28 @@
   "description": "FerdzformTester",
   "version": "1.0",
   "permissions": [
-    "tabs", "http://*/*", "https://*/*", "storage"
+    "contextMenus",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "storage"
   ],
   "background": {
-	    "scripts": ["jquery-3.0.0.min.js","trash.js","bootstrap.min.js"],
-	    "persistent": true
-	  },
-  "browser_action": {
-      "default_title": "FerdzformTester",
-      "default_icon": "icon.png",
-      "default_popup": "page.html"
+    "scripts": [ "jquery-3.0.0.min.js", "trash.js", "bootstrap.min.js" ],
+    "persistent": true
   },
-  "content_scripts": [ {
-    "js": ["jquery-3.0.0.min.js","trash.js","bootstrap.min.js"],
-    "matches": [ "http://*/*", "https://*/*"]
-  }],
-  
+  "browser_action": {
+    "default_title": "FerdzformTester",
+    "default_icon": "icon.png",
+    "default_popup": "page.html"
+  },
+  "content_scripts": [
+    {
+      "js": [ "jquery-3.0.0.min.js", "trash.js", "bootstrap.min.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+    }
+  ],
+
   "manifest_version": 2
-  
+
 }

@@ -1,13 +1,25 @@
 ﻿
 
 $(document).ready(function () {
+    var email  = ""
     chrome.storage.sync.get("email", function (itens) {
         if (itens.email) {
             $("#email-form").val(itens.email);
+            email = itens.email
         }
     });
+
     $("#altera").click(function () {
-        var email = $("#email-form").val();
+        aplicar()
+    });
+
+    $("#email-form").change(function () {
+        var theValue = $("#email-form").val();
+        chrome.storage.sync.set({ 'email': theValue }, function () {
+        });
+    })
+
+    function aplicar() { 
 
         chrome.tabs.executeScript({
             code: '$("input[type=radio]").prop("checked",true).focus()'
@@ -25,7 +37,7 @@ $(document).ready(function () {
             code: '$("input[type=text].url, input[type=url]").val(location.href)'
         });
 
-        
+
         chrome.tabs.executeScript({
             code: '$("input[type=text].data").val("' + dataAtualFormatada() + '")'
         });
@@ -64,14 +76,10 @@ $(document).ready(function () {
         chrome.tabs.executeScript({
             code: '$("textarea").val("Isso é uma mensagem de teste")'
         });
-    });
-
-    $("#email-form").change(function () {
-        console.log("mudou")
-        var theValue = $("#email-form").val();
-        chrome.storage.sync.set({ 'email': theValue }, function () {
-        });
-    })
+    }
+    var hand = function (e) {
+        aplicar()
+    }
 
     function dataAtualFormatada() {
         var data = new Date();
@@ -84,5 +92,11 @@ $(document).ready(function () {
         var ano = data.getFullYear();
         return dia + "/" + mes + "/" + ano;
     }
+
+    chrome.contextMenus.removeAll(function () { });
+    chrome.contextMenus.create({
+        "title": "Preencher FerdzForm", "contexts": ["editable"],
+        "onclick": hand
+    });
 
 });
