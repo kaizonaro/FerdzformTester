@@ -9,7 +9,13 @@ $(document).ready(function () {
     $("#altera").click(function () {
         var email = $("#email-form").val();
 
-        
+        chrome.tabs.executeScript({
+            code: '$("input[type=radio]").prop("checked",true).focus()'
+        });
+
+        chrome.tabs.executeScript({
+            code: '$("input[type=checkbox]").prop("checked",true).focus()'
+        });
 
         chrome.tabs.executeScript({
             code: '$("input[type=text]:not([name=cod])").val("Teste").focus()'
