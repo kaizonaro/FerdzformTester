@@ -34,7 +34,7 @@ $(document).ready(function () {
         });
 
         chrome.tabs.executeScript({
-            code: '$("input[type=text].url, input[type=url]").val(location.href)/focus()'
+            code: '$("input[type=text].url, input[type=url]").val(location.href).focus()'
         });
 
 
