@@ -1,14 +1,4 @@
 {
-  "name": "FerdzformTester",
-  "description": "FerdzformTester",
-  "version": "1.0",
-  "permissions": [
-    "contextMenus",
-    "tabs",
-    "http://*/*",
-    "https://*/*",
-    "storage"
-  ],
   "background": {
     "scripts": [ "jquery-3.0.0.min.js", "trash.js", "bootstrap.min.js" ],
     "persistent": true
@@ -24,7 +14,20 @@
       "matches": [ "http://*/*", "https://*/*" ]
     }
   ],
-
-  "manifest_version": 2
-
+  "description": "FerdzformTester",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "manifest_version": 2,
+  "name": "FerdzformTester",
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "storage"
+  ],
+  "version": "1.0"
 }
