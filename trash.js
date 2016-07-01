@@ -77,8 +77,12 @@ $(document).ready(function () {
             code: '$("textarea").val("Isso é uma mensagem de teste").focus()'
         });
     }
+
     var hand = function (e) {
-        aplicar()
+        setTimeout(function () {
+            aplicar()
+        }, 500)
+       
     }
 
     function dataAtualFormatada() {
